@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_host"
+    app:startDestination="@id/menuFragment">
+
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.example.mycasino9.view.fragments.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menuFragment_to_settingsOnePlayerFragment"
+            app:destination="@id/settingsOnePlayerFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_settingsTwoPlayersFragment"
+            app:destination="@id/settingsTwoPlayersFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_tutorialsFragment2"
+            app:destination="@id/tutorialsFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsOnePlayerFragment"
+        android:name="com.example.mycasino9.view.fragments.SettingsOnePlayerFragment"
+        android:label="fragment_settings_one_player"
+        tools:layout="@layout/fragment_settings_one_player" >
+        <action
+            android:id="@+id/action_settingsOnePlayerFragment_to_gameOnePlayerFragment"
+            app:destination="@id/gameOnePlayerFragment" />
+        <action
+            android:id="@+id/action_settingsOnePlayerFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsTwoPlayersFragment"
+        android:name="com.example.mycasino9.view.fragments.SettingsTwoPlayersFragment"
+        android:label="fragment_settings_two_players"
+        tools:layout="@layout/fragment_settings_two_players" >
+        <action
+            android:id="@+id/action_settingsTwoPlayersFragment_to_gameTwoPlayersFragment"
+            app:destination="@id/gameTwoPlayersFragment" />
+        <action
+            android:id="@+id/action_settingsTwoPlayersFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameOnePlayerFragment"
+        android:name="com.example.mycasino9.view.fragments.GameOnePlayerFragment"
+        android:label="fragment_game_one_player"
+        tools:layout="@layout/fragment_game_one_player" >
+        <action
+            android:id="@+id/action_gameOnePlayerFragment_to_settingsOnePlayerFragment"
+            app:destination="@id/settingsOnePlayerFragment" />
+        <action
+            android:id="@+id/action_gameOnePlayerFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameTwoPlayersFragment"
+        android:name="com.example.mycasino9.view.fragments.GameTwoPlayersFragment"
+        android:label="fragment_game_two_players"
+        tools:layout="@layout/fragment_game_two_players" >
+        <action
+            android:id="@+id/action_gameTwoPlayersFragment_to_settingsTwoPlayersFragment"
+            app:destination="@id/settingsTwoPlayersFragment" />
+        <action
+            android:id="@+id/action_gameTwoPlayersFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tutorialsFragment2"
+        android:name="com.example.mycasino9.view.fragments.TutorialsFragment"
+        android:label="fragment_tutorials"
+        tools:layout="@layout/fragment_tutorials" >
+        <action
+            android:id="@+id/action_tutorialsFragment2_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+</navigation>

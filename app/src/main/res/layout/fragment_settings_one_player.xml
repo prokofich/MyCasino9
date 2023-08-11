@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#0fa38a"
+    tools:context=".view.fragments.SettingsOnePlayerFragment">
+
+   <ImageView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:id="@+id/id_set_one_img" />
+
+   <TextView
+       android:gravity="center"
+       android:textColor="@color/white"
+       android:text="dghgfhdfhdfhdfhdfhdfhdfhdfhdfhdfhdfh"
+       android:textSize="30sp"
+       android:textStyle="italic"
+       android:id="@+id/id_set_one_tv_rules"
+       android:layout_width="0dp"
+       android:layout_height="0dp"
+       android:background="@drawable/background_tv_menu1"
+       app:layout_constraintBottom_toTopOf="@id/id_set_one_img_smile1"
+       app:layout_constraintWidth_percent="0.8"
+       app:layout_constraintHeight_percent="0.3"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       android:layout_marginTop="10dp"/>
+
+    <ImageView
+        android:id="@+id/id_set_one_img_smile1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/id_set_one_tv_record"
+        app:layout_constraintHeight_percent="0.13"
+        app:layout_constraintWidth_percent="0.22"
+        app:layout_constraintTop_toBottomOf="@id/id_set_one_tv_rules"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/id_set_one_img_smile2"/>
+
+    <RadioButton
+        android:id="@+id/id_set_one_radio1"
+        android:buttonTint="@color/white"
+        android:background="@drawable/background_button_menu1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:textColor="@color/white"
+        app:layout_constraintWidth_percent="0.1"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintTop_toBottomOf="@id/id_set_one_img_smile1"
+        app:layout_constraintStart_toStartOf="@id/id_set_one_img_smile1"
+        app:layout_constraintEnd_toEndOf="@id/id_set_one_img_smile1"/>
+
+
+    <ImageView
+        android:id="@+id/id_set_one_img_smile2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.13"
+        app:layout_constraintWidth_percent="0.22"
+        app:layout_constraintBottom_toTopOf="@id/id_set_one_tv_record"
+        app:layout_constraintTop_toBottomOf="@id/id_set_one_tv_rules"
+        app:layout_constraintStart_toEndOf="@id/id_set_one_img_smile1"
+        app:layout_constraintEnd_toStartOf="@id/id_set_one_img_smile3"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <RadioButton
+        android:id="@+id/id_set_one_radio2"
+        android:buttonTint="@color/white"
+        android:background="@drawable/background_button_menu1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:textColor="@color/white"
+        app:layout_constraintWidth_percent="0.1"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintTop_toBottomOf="@id/id_set_one_img_smile2"
+        app:layout_constraintStart_toStartOf="@id/id_set_one_img_smile2"
+        app:layout_constraintEnd_toEndOf="@id/id_set_one_img_smile2"/>
+
+    <ImageView
+        android:id="@+id/id_set_one_img_smile3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.13"
+        app:layout_constraintWidth_percent="0.22"
+        app:layout_constraintBottom_toTopOf="@id/id_set_one_tv_record"
+        app:layout_constraintTop_toBottomOf="@id/id_set_one_tv_rules"
+        app:layout_constraintStart_toEndOf="@id/id_set_one_img_smile2"
+        app:layout_constraintEnd_toStartOf="@id/id_set_one_img_smile4"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <RadioButton
+        android:id="@+id/id_set_one_radio3"
+        android:buttonTint="@color/white"
+        android:background="@drawable/background_button_menu1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:textColor="@color/white"
+        app:layout_constraintWidth_percent="0.1"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintTop_toBottomOf="@id/id_set_one_img_smile3"
+        app:layout_constraintStart_toStartOf="@id/id_set_one_img_smile3"
+        app:layout_constraintEnd_toEndOf="@id/id_set_one_img_smile3"/>
+
+    <ImageView
+        android:id="@+id/id_set_one_img_smile4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.13"
+        app:layout_constraintWidth_percent="0.22"
+        app:layout_constraintBottom_toTopOf="@id/id_set_one_tv_record"
+        app:layout_constraintTop_toBottomOf="@id/id_set_one_tv_rules"
+        app:layout_constraintStart_toEndOf="@id/id_set_one_img_smile3"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <RadioButton
+        android:id="@+id/id_set_one_radio4"
+        android:buttonTint="@color/white"
+        android:background="@drawable/background_button_menu1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:textColor="@color/white"
+        app:layout_constraintWidth_percent="0.1"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintTop_toBottomOf="@id/id_set_one_img_smile4"
+        app:layout_constraintStart_toStartOf="@id/id_set_one_img_smile4"
+        app:layout_constraintEnd_toEndOf="@id/id_set_one_img_smile4"/>
+
+    <TextView
+        android:id="@+id/id_set_one_tv_record"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:fontFamily="@font/creepster"
+        android:text="total number of wins:1"
+        android:textSize="30sp"
+        android:background="@drawable/background_tv_menu1"
+        app:layout_constraintBottom_toTopOf="@id/id_set_one_button_next"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintWidth_percent="0.8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_set_one_radio1"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:textColor="@color/white"
+        android:text="NEXT"
+        android:textSize="40sp"
+        android:fontFamily="@font/creepster"
+        android:id="@+id/id_set_one_button_next"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/id_set_one_button_menu"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintWidth_percent="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/background_button_menu1"
+        app:layout_constraintTop_toBottomOf="@id/id_set_one_tv_record"/>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:text="MENU"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        android:fontFamily="@font/creepster"
+        android:id="@+id/id_set_one_button_menu"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/background_button_menu1"
+        app:layout_constraintWidth_percent="0.5"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="10dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

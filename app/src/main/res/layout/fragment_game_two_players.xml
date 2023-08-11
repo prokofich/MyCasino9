@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#0fa38a"
+    tools:context=".view.fragments.GameTwoPlayersFragment">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/id_game_two_img"/>
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/id_game_two_cs_pause"
+        android:visibility="gone"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHeight_percent="0.6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintWidth_percent="0.5">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:text="resume"
+            android:textColor="@color/white"
+            android:textSize="50sp"
+            android:fontFamily="@font/creepster"
+            app:layout_constraintBottom_toTopOf="@id/id_game_two_button_finish"
+            android:background="@drawable/background_button_menu1"
+            android:id="@+id/id_game_two_button_continue"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.18"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:textColor="@color/white"
+            android:textSize="50sp"
+            android:text="finish"
+            android:fontFamily="@font/creepster"
+            app:layout_constraintTop_toBottomOf="@id/id_game_two_button_continue"
+            android:background="@drawable/background_button_menu1"
+            android:id="@+id/id_game_two_button_finish"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.18"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/id_game_two_cs_game"
+        android:layout_width="match_parent"
+        android:visibility="visible"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/id_game_two_view_black"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            app:layout_constraintWidth_percent="0.02"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <ImageView
+            app:layout_constraintBottom_toTopOf="@id/id_game_two_tv_name_player1"
+            android:layout_marginTop="10dp"
+            android:id="@+id/id_game_two_iv_player1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.15"
+            app:layout_constraintWidth_percent="0.28"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/id_game_two_view_black"/>
+
+        <TextView
+            android:id="@+id/id_game_two_tv_name_player1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:text="name1"
+            android:textStyle="italic"
+            android:textSize="30sp"
+            android:background="@drawable/background_tv_menu1"
+            app:layout_constraintWidth_percent="0.45"
+            app:layout_constraintHeight_percent="0.08"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/idgame_two_iv_img_dice1_player1"
+            app:layout_constraintEnd_toStartOf="@id/id_game_two_view_black"
+            app:layout_constraintTop_toBottomOf="@id/id_game_two_iv_player1"/>
+
+        <ImageView
+            android:id="@+id/idgame_two_iv_img_dice1_player1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/idgame_two_iv_img_dice2_player1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/id_game_two_view_black"
+            app:layout_constraintTop_toBottomOf="@id/id_game_two_tv_name_player1"
+            app:layout_constraintWidth_percent="0.25"
+            app:layout_constraintHeight_percent="0.13"/>
+
+        <ImageView
+            android:id="@+id/idgame_two_iv_img_dice2_player1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/idgame_two_iv_img_dice3_player1"
+            app:layout_constraintEnd_toStartOf="@id/id_game_two_view_black"
+            app:layout_constraintTop_toBottomOf="@id/idgame_two_iv_img_dice1_player1"
+            app:layout_constraintWidth_percent="0.25"
+            app:layout_constraintHeight_percent="0.13"/>
+
+        <ImageView
+            android:id="@+id/idgame_two_iv_img_dice3_player1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/id_game_two_tv_all_points_player1"
+            app:layout_constraintEnd_toStartOf="@id/id_game_two_view_black"
+            app:layout_constraintTop_toBottomOf="@id/idgame_two_iv_img_dice2_player1"
+            app:layout_constraintWidth_percent="0.25"
+            app:layout_constraintHeight_percent="0.13"/>
+
+        <TextView
+            android:background="@drawable/background_tv_menu1"
+            android:id="@+id/id_game_two_tv_all_points_player1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:fontFamily="@font/creepster"
+            android:textColor="@color/white"
+            android:text="0"
+            android:textSize="50sp"
+            android:textStyle="bold"
+            app:layout_constraintWidth_percent="0.25"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintBottom_toTopOf="@id/id_game_two_button_throw_dice1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/id_game_two_view_black"
+            app:layout_constraintTop_toBottomOf="@id/idgame_two_iv_img_dice3_player1"/>
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:id="@+id/id_game_two_iv_player2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.15"
+            app:layout_constraintWidth_percent="0.28"
+            app:layout_constraintBottom_toTopOf="@id/id_game_two_tv_name_player2"
+            app:layout_constraintStart_toEndOf="@id/id_game_two_view_black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/id_game_two_tv_name_player2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:text="name2"
+            android:textStyle="italic"
+            android:textSize="30sp"
+            android:background="@drawable/background_tv_menu1"
+            app:layout_constraintWidth_percent="0.45"
+            app:layout_constraintHeight_percent="0.08"
+            app:layout_constraintBottom_toTopOf="@id/idgame_two_iv_img_dice1_player2"
+            app:layout_constraintStart_toEndOf="@id/id_game_two_view_black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/id_game_two_iv_player2"/>
+
+        <ImageView
+            android:id="@+id/idgame_two_iv_img_dice1_player2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/idgame_two_iv_img_dice2_player2"
+            app:layout_constraintStart_toEndOf="@id/id_game_two_view_black"
+            app:layout_constraintTop_toBottomOf="@id/id_game_two_tv_name_player1"
+            app:layout_constraintWidth_percent="0.25"
+            app:layout_constraintHeight_percent="0.13"/>
+
+        <ImageView
+            android:id="@+id/idgame_two_iv_img_dice2_player2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/idgame_two_iv_img_dice3_player2"
+            app:layout_constraintStart_toEndOf="@id/id_game_two_view_black"
+            app:layout_constraintTop_toBottomOf="@id/idgame_two_iv_img_dice1_player1"
+            app:layout_constraintWidth_percent="0.25"
+            app:layout_constraintHeight_percent="0.13"/>
+
+        <ImageView
+            android:id="@+id/idgame_two_iv_img_dice3_player2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/id_game_two_tv_all_points_player2"
+            app:layout_constraintStart_toEndOf="@id/id_game_two_view_black"
+            app:layout_constraintTop_toBottomOf="@id/idgame_two_iv_img_dice2_player1"
+            app:layout_constraintWidth_percent="0.25"
+            app:layout_constraintHeight_percent="0.13"/>
+
+        <TextView
+            android:background="@drawable/background_tv_menu1"
+            android:id="@+id/id_game_two_tv_all_points_player2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:fontFamily="@font/creepster"
+            android:textColor="@color/white"
+            android:text="0"
+            android:textSize="50sp"
+            android:textStyle="bold"
+            app:layout_constraintWidth_percent="0.25"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/id_game_two_button_throw_dice2"
+            app:layout_constraintStart_toEndOf="@id/id_game_two_view_black"
+            app:layout_constraintTop_toBottomOf="@id/idgame_two_iv_img_dice3_player1"/>
+
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/id_game_two_button_throw_dice1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="toss a dice"
+            android:textColor="@color/white"
+            android:textSize="32sp"
+            android:fontFamily="@font/creepster"
+            android:background="@drawable/background_button_game"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/id_game_two_view_black"
+            app:layout_constraintWidth_percent="0.4"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintHeight_percent="0.1"/>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/id_game_two_button_throw_dice2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/background_button_game"
+            android:fontFamily="@font/creepster"
+            android:text="toss a dice"
+            android:textColor="@color/white"
+            android:textSize="32sp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintHorizontal_bias="0.555"
+            app:layout_constraintStart_toEndOf="@id/id_game_two_view_black"
+            app:layout_constraintWidth_percent="0.4" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:visibility="gone"
+            android:id="@+id/id_game_two_button_restart"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="RESTART"
+            android:textColor="@color/white"
+            android:textSize="80sp"
+            android:fontFamily="@font/creepster"
+            android:background="@drawable/background_button_game"
+            app:layout_constraintWidth_percent="0.9"
+            app:layout_constraintHeight_percent="0.15"
+            app:layout_constraintTop_toTopOf="@id/id_game_two_button_throw_dice1"
+            app:layout_constraintBottom_toBottomOf="@id/id_game_two_button_throw_dice1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/id_game_two_button_done"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        android:background="@drawable/background_tv_menu1"
+        app:layout_constraintWidth_percent="0.2"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/id_game_two_button_done_galka"
+            android:layout_width="match_parent"
+            android:background="@drawable/ic_done"
+            android:layout_height="match_parent"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

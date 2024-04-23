@@ -1,4 +1,4 @@
-package com.example.mycasino9.api
+package com.example.mycasino9.model.api
 
 import com.example.mycasino9.model.ResponceWebView
 import com.example.mycasino9.model.ResponseText
@@ -14,7 +14,7 @@ interface ApiService {
     @FormUrlEncoded
     @POST("splash.php")
     suspend fun setPostParametersPhone(
-        @Field("phone_name") phone_name:String,
+        @Field("phone_name") phoneName:String,
         @Field("locale") locale:String,
         @Field("unique") unique:String
     ): Response<ResponceWebView>

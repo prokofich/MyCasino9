@@ -3,7 +3,7 @@ package com.example.mycasino9.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.mycasino9.api.Repository
+import com.example.mycasino9.model.api.Repository
 import com.example.mycasino9.model.ResponceWebView
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -12,12 +12,12 @@ import retrofit2.Response
 
 class SplashViewModel: ViewModel() {
 
-    var repo = Repository()
-    var webViewUrl: MutableLiveData<Response<ResponceWebView>> = MutableLiveData()
+    private val repository = Repository()
+    val webViewUrl: MutableLiveData<Response<ResponceWebView>> = MutableLiveData()
 
-    fun setPostParametersPhone(phone_name:String,locale:String,unique:String){
+    fun setPostParametersPhone(phoneName:String,locale:String,unique:String){
         viewModelScope.launch(Dispatchers.IO) {
-            val response = repo.setParametersPhone(phone_name, locale, unique)
+            val response = repository.setParametersPhone(phoneName, locale, unique)
             withContext(Dispatchers.Main){
                 webViewUrl.value = response
             }

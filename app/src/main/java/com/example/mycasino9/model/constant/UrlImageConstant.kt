@@ -1,4 +1,4 @@
-package com.example.mycasino9.constant
+package com.example.mycasino9.model.constant
 
 // image for menu
 const val url_image_background = "http://37.27.9.28/16/background1.jpg"
@@ -25,5 +25,7 @@ const val url_dice_point4 = "http://37.27.9.28/16/all_dice4.png"
 const val url_dice_point5 = "http://37.27.9.28/16/all_dice5.png"
 const val url_dice_point6 = "http://37.27.9.28/16/all_dice6.png"
 
-val listUrlImageDice = listOf(url_dice_point1, url_dice_point2, url_dice_point3, url_dice_point4,
-    url_dice_point5, url_dice_point6)
+val listUrlImageDice = listOf(
+    url_dice_point1, url_dice_point2, url_dice_point3, url_dice_point4,
+    url_dice_point5, url_dice_point6
+)

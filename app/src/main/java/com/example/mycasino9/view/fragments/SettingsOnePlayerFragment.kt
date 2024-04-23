@@ -1,5 +1,6 @@
 package com.example.mycasino9.view.fragments
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,7 +12,13 @@ import androidx.activity.addCallback
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.example.mycasino9.R
-import com.example.mycasino9.constant.*
+import com.example.mycasino9.model.constant.MAIN
+import com.example.mycasino9.model.constant.NUMBER_AVATAR
+import com.example.mycasino9.model.constant.url_image_background
+import com.example.mycasino9.model.constant.url_image_girl1
+import com.example.mycasino9.model.constant.url_image_girl2
+import com.example.mycasino9.model.constant.url_image_man1
+import com.example.mycasino9.model.constant.url_image_man2
 import com.example.mycasino9.viewmodel.TutorialsOnePlayerViewModel
 import kotlinx.android.synthetic.main.fragment_settings_one_player.*
 
@@ -26,6 +33,7 @@ class SettingsOnePlayerFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_settings_one_player, container, false)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -40,8 +48,8 @@ class SettingsOnePlayerFragment : Fragment() {
 
         val onePlayerViewModel = ViewModelProvider(this)[TutorialsOnePlayerViewModel::class.java]
         onePlayerViewModel.getTextOnePlayer()
-        onePlayerViewModel.Text.observe(viewLifecycleOwner){ TEXT ->
-            id_set_one_tv_rules.text = TEXT.body()!!.text
+        onePlayerViewModel.text.observe(viewLifecycleOwner){
+            id_set_one_tv_rules.text = it.body()!!.text
         }
 
         //загрузка количества побед
@@ -49,12 +57,12 @@ class SettingsOnePlayerFragment : Fragment() {
 
         //переход обратно в меню
         id_set_one_button_menu.setOnClickListener {
-            MAIN.navController.navigate(R.id.action_settingsOnePlayerFragment_to_menuFragment)
+            MAIN.navController?.navigate(R.id.action_settingsOnePlayerFragment_to_menuFragment)
         }
 
         //обработка нажатия на кнопку НАЗАД
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner){
-            MAIN.navController.navigate(R.id.action_settingsOnePlayerFragment_to_menuFragment)
+            MAIN.navController?.navigate(R.id.action_settingsOnePlayerFragment_to_menuFragment)
         }
 
         //выбор 1 аватарки
@@ -94,27 +102,22 @@ class SettingsOnePlayerFragment : Fragment() {
             if(numberAvatar==0){
                 showToast("choose an avatar")
             }else{
-                var bundle = Bundle()
+                val bundle = Bundle()
                 bundle.putInt(NUMBER_AVATAR,numberAvatar)
-                MAIN.navController.navigate(R.id.action_settingsOnePlayerFragment_to_gameOnePlayerFragment,bundle)
+                MAIN.navController?.navigate(R.id.action_settingsOnePlayerFragment_to_gameOnePlayerFragment,bundle)
             }
         }
-
-
-
 
     }
 
     //функция загрузки картинки
-    private fun loadBackgroundImage(url:String,id: ImageView){
+    private fun loadBackgroundImage(url : String , id : ImageView) {
         Glide.with(requireContext())
             .load(url)
             .into(id)
     }
 
     //функция показа всплывающего сообщения
-    private fun showToast(message:String){
-        Toast.makeText(requireContext(),message, Toast.LENGTH_SHORT).show()
-    }
+    private fun showToast(message:String) = Toast.makeText(requireContext(),message, Toast.LENGTH_SHORT).show()
 
 }

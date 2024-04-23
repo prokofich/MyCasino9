@@ -9,7 +9,11 @@ import android.widget.ImageView
 import androidx.activity.addCallback
 import com.bumptech.glide.Glide
 import com.example.mycasino9.R
-import com.example.mycasino9.constant.*
+import com.example.mycasino9.model.constant.MAIN
+import com.example.mycasino9.model.constant.url_image_background
+import com.example.mycasino9.model.constant.url_image_emblema_dice
+import com.example.mycasino9.model.constant.url_image_one_player
+import com.example.mycasino9.model.constant.url_image_two_players
 import kotlinx.android.synthetic.main.fragment_menu.*
 
 
@@ -44,11 +48,11 @@ class MenuFragment : Fragment() {
 
         //переход к одиночной игре
         id_menu_button_game_one_player.setOnClickListener {
-            MAIN.navController.navigate(R.id.action_menuFragment_to_settingsOnePlayerFragment)
+            MAIN.navController?.navigate(R.id.action_menuFragment_to_settingsOnePlayerFragment)
         }
 
         id_menu_button_game_two_players.setOnClickListener {
-            MAIN.navController.navigate(R.id.action_menuFragment_to_settingsTwoPlayersFragment)
+            MAIN.navController?.navigate(R.id.action_menuFragment_to_settingsTwoPlayersFragment)
         }
 
         //кнопка выхода
@@ -58,9 +62,8 @@ class MenuFragment : Fragment() {
 
         //кнопка туториалов
         id_menu_button_tutorials.setOnClickListener {
-            MAIN.navController.navigate(R.id.action_menuFragment_to_tutorialsFragment2)
+            MAIN.navController?.navigate(R.id.action_menuFragment_to_tutorialsFragment2)
         }
-
 
     }
 

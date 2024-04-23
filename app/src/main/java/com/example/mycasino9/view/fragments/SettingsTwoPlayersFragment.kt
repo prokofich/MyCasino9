@@ -9,15 +9,22 @@ import android.widget.ImageView
 import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.example.mycasino9.R
-import com.example.mycasino9.constant.*
-import kotlinx.android.synthetic.main.fragment_settings_one_player.*
+import com.example.mycasino9.model.constant.MAIN
+import com.example.mycasino9.model.constant.NAME_PLAYER_1
+import com.example.mycasino9.model.constant.NAME_PLAYER_2
+import com.example.mycasino9.model.constant.NUMBER_AVATAR_PLAYER_1
+import com.example.mycasino9.model.constant.NUMBER_AVATAR_PLAYER_2
+import com.example.mycasino9.model.constant.url_image_background
+import com.example.mycasino9.model.constant.url_image_girl1
+import com.example.mycasino9.model.constant.url_image_girl2
+import com.example.mycasino9.model.constant.url_image_man1
+import com.example.mycasino9.model.constant.url_image_man2
 import kotlinx.android.synthetic.main.fragment_settings_two_players.*
 
 class SettingsTwoPlayersFragment : Fragment() {
 
     private var numberAvatarPlayer1 = 0
     private var numberAvatarPlayer2 = 0
-
     private var flagReadyPlayer1 = false
     private var flagReadyPlayer2 = false
 
@@ -84,13 +91,13 @@ class SettingsTwoPlayersFragment : Fragment() {
                    flagReadyPlayer1 = true
                    if(flagReadyPlayer2){
 
-                       var bundle = Bundle()
+                       val bundle = Bundle()
                        bundle.putInt(NUMBER_AVATAR_PLAYER_1,numberAvatarPlayer1)
                        bundle.putInt(NUMBER_AVATAR_PLAYER_2,numberAvatarPlayer2)
                        bundle.putString(NAME_PLAYER_1,id_set_two_et_1.text.toString())
                        bundle.putString(NAME_PLAYER_2,id_set_two_et_2.text.toString())
 
-                       MAIN.navController.navigate(R.id.action_settingsTwoPlayersFragment_to_gameTwoPlayersFragment,bundle)
+                       MAIN.navController?.navigate(R.id.action_settingsTwoPlayersFragment_to_gameTwoPlayersFragment,bundle)
 
                    }
                }else{
@@ -103,7 +110,6 @@ class SettingsTwoPlayersFragment : Fragment() {
             }
         }
 
-
         //готовность второго игрока + переход к игре
         id_set_two_button_ready2.setOnClickListener {
 
@@ -113,13 +119,13 @@ class SettingsTwoPlayersFragment : Fragment() {
                     flagReadyPlayer2 = true
                     if(flagReadyPlayer1){
 
-                        var bundle = Bundle()
+                        val bundle = Bundle()
                         bundle.putInt(NUMBER_AVATAR_PLAYER_1,numberAvatarPlayer1)
                         bundle.putInt(NUMBER_AVATAR_PLAYER_2,numberAvatarPlayer2)
                         bundle.putString(NAME_PLAYER_1,id_set_two_et_1.text.toString())
                         bundle.putString(NAME_PLAYER_2,id_set_two_et_2.text.toString())
 
-                        MAIN.navController.navigate(R.id.action_settingsTwoPlayersFragment_to_gameTwoPlayersFragment,bundle)
+                        MAIN.navController?.navigate(R.id.action_settingsTwoPlayersFragment_to_gameTwoPlayersFragment,bundle)
 
                     }
                 }else{
@@ -131,10 +137,6 @@ class SettingsTwoPlayersFragment : Fragment() {
                 showToast("you need to enter the names")
             }
         }
-
-
-
-
 
         //выбор 1 аватарки второго игрока
         id_set_two_radio1_player2.setOnClickListener {
@@ -168,10 +170,6 @@ class SettingsTwoPlayersFragment : Fragment() {
             id_set_two_radio1_player2.isChecked = false
         }
 
-
-
-
-
     }
 
     //функция загрузки картинки
@@ -182,8 +180,6 @@ class SettingsTwoPlayersFragment : Fragment() {
     }
 
     //функция показа всплывающего сообщения
-    private fun showToast(message:String){
-        Toast.makeText(requireContext(),message, Toast.LENGTH_SHORT).show()
-    }
+    private fun showToast(message:String) = Toast.makeText(requireContext(),message, Toast.LENGTH_SHORT).show()
 
 }

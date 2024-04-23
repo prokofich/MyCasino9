@@ -7,13 +7,13 @@ import android.view.WindowManager
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.mycasino9.R
-import com.example.mycasino9.constant.APP_PREFERENCES
-import com.example.mycasino9.constant.COUNT_WIN_ONE_PLAYER
-import com.example.mycasino9.constant.MAIN
+import com.example.mycasino9.model.constant.APP_PREFERENCES
+import com.example.mycasino9.model.constant.COUNT_WIN_ONE_PLAYER
+import com.example.mycasino9.model.constant.MAIN
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var navController: NavController
+    var navController : NavController? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,28 +22,17 @@ class MainActivity : AppCompatActivity() {
         MAIN = this
         navController = Navigation.findNavController(this,R.id.id_nav_host)
 
-        //устновка полноэкранного режима
-        window.setFlags(
-            WindowManager.LayoutParams.FLAG_FULLSCREEN,
-            WindowManager.LayoutParams.FLAG_FULLSCREEN
-        )
-
     }
 
     //функция обновления количества побед в одноп. режиме
-    fun updateCountWinOnePlayer(){
+    fun updateCountWinOnePlayer() {
         val countWin = getCountWinOnePlayer()
-        val pref = getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE)
-        pref.edit()
-            .putInt(COUNT_WIN_ONE_PLAYER,countWin+1)
-            .apply()
+        getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE).edit().putInt(COUNT_WIN_ONE_PLAYER,countWin+1).apply()
     }
 
     //функция получения количества побед
-    fun getCountWinOnePlayer():Int{
+    fun getCountWinOnePlayer() : Int {
         return getSharedPreferences(APP_PREFERENCES, MODE_PRIVATE).getInt(COUNT_WIN_ONE_PLAYER, 0)
     }
-
-
 
 }
